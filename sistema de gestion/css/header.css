@@ -1,0 +1,118 @@
+
+
+.custom-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #4e54c8;
+    border-radius: 0px 125px 350px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px 0px 10px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .custom-header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 20px;
+    color: white;
+  }
+  
+  .custom-header .nav-links a {
+    text-decoration: none;
+    font-weight: 500;
+    color: white;
+    transition: color 0.3s ease;
+  }
+  
+  .custom-header .nav-links a:hover {
+    color:white;
+  }
+  
+  /* menu hamburguesa */
+  .hamburguesa{
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 20px;
+   
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #4e54c8;
+    padding: 20px;
+    transition: color 0.3s ease;
+  }
+  
+  .custom-header .nav-links a:hover {
+    color: #3b41b5;
+    background: white;
+    box-shadow: 20px rgba(0, 0, 0, 0.5);
+    border-radius: 0px 0px 35px;
+  }
+  
+  .hamburger {
+    display: none;
+    margin: 10px;
+    font-size: 28px;
+    cursor: pointer;
+  }
+  .nav-linkshambur{
+    display: none;
+    background: #4e54c8;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+  
+  /* Responsive para menos de 720px */
+  
+@media (max-width: 600px) {
+  .hamburger {
+    display: block;
+  }
+  .nav-links{
+    display: none;
+  }
+  .nav-linkshambur a{
+    background: #3b41b5;
+    flex-direction: column;
+    text-align: center;
+    margin: 20px;
+    color: white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+  
+
+  #navvMenu {
+    display: none;
+    flex-direction: column;
+    background: #3b41b5;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 10px;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+  }
+
+  #navvMenu.show {
+    display: flex;
+  }
+
+  #navvMenu ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  #navvMenu ul li {
+    margin-bottom: 10px;
+  }
+}

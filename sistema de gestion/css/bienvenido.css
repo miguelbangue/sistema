@@ -1,0 +1,310 @@
+/* * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #4e54c8, #8f94fb);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  } */
+
+  .body_cartas{
+    font-family: 'Segoe UI', sans-serif;
+    background: url("../imagenes/sunset-9571003_1280.webp") no-repeat;
+    background-size: cover;
+    position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .body_oscuro{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  .carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    /* margin-top: 25%; */
+    height: 100%;
+    display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; 
+    
+  }
+  
+  .carousel-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease;
+    width: 100%;
+    
+  }
+  
+  
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #4e54c8;
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1;
+    transition: background 0.3s;
+  }
+  
+  .carousel-btn:hover {
+    background: #3b41b5;
+  }
+  
+  .carousel-btn.prev {
+    left: 10px;
+  }
+  
+  .carousel-btn.next {
+    right: 10px;
+  }
+  
+  @media (max-width: 600px) {
+    .card {
+      min-width: 100px;
+    }
+    
+  }
+
+  /* div cartas */
+
+  .card {
+    min-width: 350px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+  }
+  
+  .imagen-card {
+    width: 350px;
+    height: 200px; /* Puedes ajustar esto o hacerlo responsive */
+    overflow: hidden;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+  
+  .imagen-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* mantiene proporción y cubre el contenedor */
+    display: block;
+    background-size: cover;
+  }
+  
+  .descripcion-carta {
+    padding: 15px;
+    background: linear-gradient(135deg, #4e54c8, #8f94fb);
+    color: white;
+    font-size: 25px;
+    line-height: 1;
+    text-align: center;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+  
+
+  /* cartas productos */
+  .productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  /* .productos_card{
+    width: 100%;
+    height: 100%;
+  }
+ */
+  /* boton */
+  .btn_comprar, .btn_editar, .btn_eliminar{
+    background: linear-gradient(135deg, #4e54c8, #8f94fb);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .btn_editar{
+    background: linear-gradient(135deg, #03f152, #b8fabb);
+  }
+  .btn_eliminar{
+    background: linear-gradient(135deg, #f10303, #f78888);
+  }
+  .btn_comprar:hover {
+    background: linear-gradient(135deg, #3b3fc4, #7c81f8);
+    transform: scale(1.05);
+  }
+  
+  .btn_comprar:active {
+    transform: scale(0.97);
+  }
+
+/* div separar */ 
+ .separar1{
+  background: linear-gradient(135deg, #3b3fc4, #7c81f8);
+  width: 100%;
+  height: 40px;
+  margin-bottom: 40px;
+ }
+/* fin de div separar  */
+
+  
+  /* formulario para crear */
+  .crear_producto {
+  background: #f9f9f9;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+.crear_producto form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 15px;
+}
+
+.crear_producto input[type="text"],
+.crear_producto input[type="number"],
+.crear_producto input[type="file"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: #fff;
+  transition: border-color 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.crear_producto input[type="text"]:focus,
+.crear_producto input[type="number"]:focus,
+.crear_producto input[type="file"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.crear_producto input[type="submit"] {
+  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.crear_producto input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* 🔁 Responsive */
+@media screen and (max-width: 600px) {
+  .crear_producto {
+    padding: 15px;
+    margin: 15px;
+  }
+
+  .crear_producto input[type="text"],
+  .crear_producto input[type="number"],
+  .crear_producto input[type="file"],
+  .crear_producto input[type="submit"] {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+  /* fin de div crear */
+  
+  /* div buscador */
+  .buscador-form {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .buscador-form input[type="text"] {
+    padding: 10px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+  }
+  
+  .buscador-form button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    background: linear-gradient(135deg, #4e54c8, #8f94fb);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .buscador-form button:hover {
+    background: linear-gradient(135deg, #484fd4, #8f94fb);
+    
+  }
+  
+  .productos {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center top;
+  transition: background-image 0.4s ease-in-out;
+}
+
+
+
+/* Responsive para que no se vea muy recargado en móviles */
+@media (max-width: 768px) {
+  .productos {
+    background-size: 150px;
+    background-position: top center;
+  }
+}
+
+  /* fin de div buscador */
