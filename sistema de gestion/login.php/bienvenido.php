@@ -32,7 +32,7 @@
 
 <?php
 // Asegura que el carrito sea un array válido
-    $_SESSION['carrito'] = [];
+   
 if($_SESSION['carrito']){
   if (isset($_GET['men'])) {
   echo urldecode($_GET['men']);
