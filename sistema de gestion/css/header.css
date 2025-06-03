@@ -1,4 +1,6 @@
-
+body {
+  font-family: 'Montserrat', sans-serif;
+}
 
 .custom-header {
     position: fixed;
@@ -35,6 +37,7 @@
   /* menu hamburguesa */
   .hamburguesa{
     display: none;
+    
   }
 
   .nav-links {

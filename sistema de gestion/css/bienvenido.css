@@ -1,17 +1,6 @@
-/* * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #4e54c8, #8f94fb);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  } */
+body {
+  font-family: 'Montserrat', sans-serif;
+}
 
   .body_cartas{
     font-family: 'Segoe UI', sans-serif;
@@ -143,7 +132,7 @@
   }
  */
   /* boton */
-  .btn_comprar, .btn_editar, .btn_eliminar{
+  .btn_comprar, .btn_editar, .btn_eliminar, #btn_restaurar , .btn_restaurar{
     background: linear-gradient(135deg, #4e54c8, #8f94fb);
     color: white;
     border: none;
@@ -160,6 +149,7 @@
   .btn_editar{
     background: linear-gradient(135deg, #03f152, #b8fabb);
   }
+  
   .btn_eliminar{
     background: linear-gradient(135deg, #f10303, #f78888);
   }
@@ -172,131 +162,163 @@
     transform: scale(0.97);
   }
 
-/* div separar */ 
- .separar1{
+
+
+  
+.separar1 {
   background: linear-gradient(135deg, #3b3fc4, #7c81f8);
+  position: relative;
   width: 100%;
   height: 40px;
   margin-bottom: 40px;
- }
-/* fin de div separar  */
+  overflow: hidden;
+  border: none;
+}
+
+.separar1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+  pointer-events: none;
+}
+
 
   
-  /* formulario para crear */
-  .crear_producto {
-  background: #f9f9f9;
-  padding: 20px;
-  margin: 20px auto;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 500px;
-  font-family: sans-serif;
-  box-sizing: border-box;
+ .crear_producto {
+  background: #fdfdfd;
+  border-radius: 20px;
+  padding: 30px;
+  margin: 40px auto;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  max-width: 520px;
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #eee;
+}
+
+.crear_producto::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 160px;
+  height: 160px;
+  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+  border-radius: 50%;
+  z-index: 0;
+  opacity: 0.15;
 }
 
 .crear_producto form {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  gap: 15px;
+  gap: 20px;
 }
 
 .crear_producto input[type="text"],
 .crear_producto input[type="number"],
 .crear_producto input[type="file"] {
-  padding: 10px;
-  border: 1px solid #ccc;
+  padding: 12px;
   border-radius: 10px;
-  font-size: 16px;
-  background-color: #fff;
+  border: 1px solid #ccc;
+  font-size: 15px;
   transition: border-color 0.3s ease;
-  width: 100%;
-  box-sizing: border-box;
 }
 
 .crear_producto input[type="text"]:focus,
 .crear_producto input[type="number"]:focus,
 .crear_producto input[type="file"]:focus {
-  border-color: #007bff;
+  border-color: #4e54c8;
   outline: none;
 }
 
 .crear_producto input[type="submit"] {
-  background: linear-gradient(135deg, #4e54c8, #8f94fb);
-  color: white;
-  padding: 12px;
+  padding: 14px;
   border: none;
-  border-radius: 10px;
+  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+  border-radius: 12px;
+  color: white;
   font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 .crear_producto input[type="submit"]:hover {
-  background-color: #0056b3;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(78, 84, 200, 0.4);
 }
 
-/* 🔁 Responsive */
-@media screen and (max-width: 600px) {
-  .crear_producto {
-    padding: 15px;
-    margin: 15px;
-  }
-
-  .crear_producto input[type="text"],
-  .crear_producto input[type="number"],
-  .crear_producto input[type="file"],
-  .crear_producto input[type="submit"] {
-    font-size: 14px;
-    padding: 10px;
-  }
-}
-
-  /* fin de div crear */
   
   /* div buscador */
   .buscador-form {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .buscador-form input[type="text"] {
-    padding: 10px;
-    width: 250px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    font-size: 16px;
-  }
-  
-  .buscador-form button {
-    padding: 10px 20px;
-    margin-left: 10px;
-    background: linear-gradient(135deg, #4e54c8, #8f94fb);
-    border: none;
-    border-radius: 10px;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  
-  .buscador-form button:hover {
-    background: linear-gradient(135deg, #484fd4, #8f94fb);
-    
-  }
-  
-  .productos {
-  padding: 20px;
+  width: 100%;
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center top;
-  transition: background-image 0.4s ease-in-out;
+  justify-content: center;
+  margin-bottom: 30px;
+  padding: 0 20px;
 }
 
+.buscador-wrapper {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  max-width: 500px;
+  width: 100%;
+}
+
+.buscador-wrapper:hover,
+.buscador-wrapper:focus-within {
+  box-shadow: 0 6px 20px rgba(78, 84, 200, 0.3);
+}
+
+.buscador-wrapper input[type="text"] {
+  flex: 1;
+  border: none;
+  padding: 15px 20px;
+  font-size: 16px;
+  outline: none;
+  border-radius: 50px 0 0 50px;
+}
+
+.buscador-wrapper button {
+  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 0 50px 50px 0;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.buscador-wrapper button:hover {
+  background: linear-gradient(135deg, #3b41b5, #7d83f9);
+}
+
+@media (max-width: 480px) {
+  .buscador-wrapper input[type="text"] {
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+
+  .buscador-wrapper button {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+}
 
 
 /* Responsive para que no se vea muy recargado en móviles */
@@ -307,4 +329,16 @@
   }
 }
 
-  /* fin de div buscador */
+/* fin de div buscador */
+
+.productos {
+padding: 20px;
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+background-size: contain;
+background-repeat: no-repeat;
+background-position: center top;
+transition: background-image 0.4s ease-in-out;
+}
+

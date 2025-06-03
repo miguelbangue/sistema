@@ -7,9 +7,9 @@ if ($_SESSION['rol'] == 1 && isset($_GET['id'])) {
   puestos al azar para ocultar el id */
   $id = intval(preg_replace('/\D/', '', $_GET['id']));
   
- /*  $conexion->query("DELETE FROM zapatillas WHERE id = $id"); */
+  $conexion->query("DELETE FROM zapatillas WHERE id = $id");
   // Marcar como eliminado en vez de borrar
-  $conexion->query("UPDATE zapatillas SET eliminado = 1 WHERE id = $id");
+  /* $conexion->query("UPDATE zapatillas SET eliminado = 1 WHERE id = $id"); */
 
   header("Location: bienvenido.php#productos");
   exit();

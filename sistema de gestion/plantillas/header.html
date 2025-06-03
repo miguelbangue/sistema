@@ -1,30 +1,55 @@
 
   <header class="custom-header">
-    <div class="logo">MiSitio</div>
-    <div class="hamburger" >☰</div>
+    <div class="logo">UrbanStep
+  <a href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <img alt="logo" style="width: 50px; height: 50px; border-radius: 30px; border: 1px solid white;"  src="../imagenes/Flux_Dev_A_stylish_urban_sneaker_store_front_named_UrbanStep_w_2.jpg" >
+  </a>
+</div>  
+  <div class="hamburger" >☰</div>
     <nav class="nav-linkshambur" id="navvMenu">
-    <a href="carrito.php" title="Ver carrito">
-  <!-- Aquí se coloca el SVG -->
-  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000" viewBox="0 0 24 24">
-    <path d="M7 18c-1.104 0-2 .897-2 2s.896 2 2 2 2-.897 2-2-.896-2-2-2zm0 2c0-.552.447-1 1-1s1 .448 1 1-.447 1-1 1-1-.448-1-1zm10-2c-1.104 0-2 .897-2 2s.896 2 2 2 2-.897 2-2-.896-2-2-2zm0 2c0-.552.447-1 1-1s1 .448 1 1-.447 1-1 1-1-.448-1-1zM6.078 4l1.339 6h9.186l1.705-6H6.078zM20 6h-2l-1.685 6.06-11.179.001L3.873 2H2v2h1.184l1.86 8.354c.145.648.723 1.103 1.39 1.104l11.607-.001a2 2 0 0 0 1.952-1.524L22 6h-2z"/>
-  </svg>
+    <a href="#" title="Ver carrito" name="abrir" data-bs-toggle="offcanvas" data-bs-target="#menuCarrito">
+  <i class="bi bi-cart-fill"></i>
+   <?php
+      $totalProductos = 0;
+      if (isset($_SESSION['carrito'])) {
+          foreach ($_SESSION['carrito'] as $producto) {
+              $totalProductos += $producto['cantidad'];
+          }
+      }
+      echo "(".$totalProductos.")";
+    ?>
+
 </a>
-      <a href="#">Servicios</a>
-      <a href="#">Contacto</a>
+<!-- menu normal para web -->
+      <a href="./bienvenido.php">Inicio</a>
+      <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Conocenos</a>
       <a href="./cerrar_sesion.php">Cerrar sesión</a>
     </nav>
     <nav class="nav-links" id="navMenu">
-      <a href="#">Servicios</a>
-      <a href="#">Contacto</a>
+      <a href="./bienvenido.php">Inicio</a>
+      <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Conocenos</a>
       <a href="./cerrar_sesion.php">Cerrar sesión</a>
-      <a href="carrito.php" title="Ver carrito">
+      <a href="#" title="Ver carrito" name="abrir" data-bs-toggle="offcanvas" data-bs-target="#menuCarrito">
   <!-- Aquí se coloca el SVG -->
-  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="20" fill="#000" viewBox="0 0 24 24">
-    <path d="M7 18c-1.104 0-2 .897-2 2s.896 2 2 2 2-.897 2-2-.896-2-2-2zm0 2c0-.552.447-1 1-1s1 .448 1 1-.447 1-1 1-1-.448-1-1zm10-2c-1.104 0-2 .897-2 2s.896 2 2 2 2-.897 2-2-.896-2-2-2zm0 2c0-.552.447-1 1-1s1 .448 1 1-.447 1-1 1-1-.448-1-1zM6.078 4l1.339 6h9.186l1.705-6H6.078zM20 6h-2l-1.685 6.06-11.179.001L3.873 2H2v2h1.184l1.86 8.354c.145.648.723 1.103 1.39 1.104l11.607-.001a2 2 0 0 0 1.952-1.524L22 6h-2z"/>
-  </svg>
+  <i class="bi bi-cart-fill"></i>
+   <?php
+      $totalProductos = 0;
+      if (isset($_SESSION['carrito'])) {
+          foreach ($_SESSION['carrito'] as $producto) {
+              $totalProductos += $producto['cantidad'];
+          }
+      }
+      echo "(".$totalProductos.")";
+    ?>
+
 </a>
+
     </nav>
     </header>
+   
+
+
+
 
 
     
