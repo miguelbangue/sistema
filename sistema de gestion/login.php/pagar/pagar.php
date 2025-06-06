@@ -76,9 +76,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               <div class="producto d-flex justify-content-between align-items-center">
                 <div>
                   <strong><?= htmlspecialchars($producto['nombre']) ?></strong><br>
-                  <small><?= $producto['cantidad'] ?> × $<?= number_format($producto['precio'], 2) ?></small>
+                  <small><?= $producto['cantidad'] ?> × €<?= number_format($producto['precio'], 2) ?></small>
                 </div>
-                <div class="text-end fw-bold">$<?= number_format($producto['cantidad'] * $producto['precio'], 2) ?></div>
+                <div class="text-end fw-bold">€<?= number_format($producto['cantidad'] * $producto['precio'], 2) ?></div>
               </div>
             <?php endforeach; ?>
           <?php else: ?>
@@ -89,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <hr>
         <div class="d-flex justify-content-between">
           <h5>Total a pagar:</h5>
-          <h5 class="text-success">$<?= number_format($total, 2) ?></h5>
+          <h5 class="text-success">€<?= number_format($total, 2) ?></h5>
         </div>
 
         <!-- PayPal SDK -->
@@ -99,7 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           <div id="paypal-button-container"></div>
         </div>
 
-        <?php session_unset();?>
+       
         <script>
         paypal.Buttons({
             style: {

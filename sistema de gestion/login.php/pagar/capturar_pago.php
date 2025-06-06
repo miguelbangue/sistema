@@ -33,6 +33,7 @@ if ($actualizarVenta->affected_rows > 0) {
     echo "<h2>✅ ¡Pago completado con éxito!</h2>";
     echo "<p>Gracias por tu compra, {$correo}. Tu ID de orden es: <strong>{$orderID}</strong></p>";
     echo '<a href="../../index.php">Volver a la tienda</a>';
+    
 } else {
     echo "<h2>⚠ Error al procesar el pago</h2>";
     echo "<p>No se encontró una transacción pendiente que coincida.</p>";

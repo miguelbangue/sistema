@@ -1,70 +1,167 @@
-* {
+body, html {
+    height: 100%;
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
     font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(135deg, #4e54c8, #8f94fb);
-    height: 100vh;
+}
+
+.login-bg {
+    position: relative;
+    min-height: 100vh;
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  
-  .login-container {
-    background: white;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+.login-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: 
+        linear-gradient(120deg, rgba(24,28,47,0.85) 0%, rgba(35,41,70,0.95) 100%),
+        url('../imagenes/Flux_Dev_A_stylish_urban_sneaker_store_front_named_UrbanStep_w_2.jpg') center/cover no-repeat;
+    filter: blur(4px);
+    z-index: 1;
+}
+
+.login-container {
+    position: relative;
+    z-index: 2;
+    background: rgba(35,41,70,0.95);
+    padding: 40px 32px;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     width: 100%;
-    max-width: 400px;
-  }
-  
-  .login-form h2 {
-    margin-bottom: 20px;
-    color: #333;
-    text-align: center;
-  }
-  
-  .login-form input {
+    max-width: 370px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.login-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.login-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+.login-header h2 {
+    color: #fff;
+    font-weight: 700;
+    margin: 0;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+}
+
+.login-form {
     width: 100%;
-    padding: 12px 15px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 13px 5px;
+    margin-bottom: 18px;
+    border: none;
     border-radius: 10px;
+    background: #161a2b;
+    color: #fff;
     font-size: 16px;
-  }
-  
-  .login-form button {
+    outline: none;
+    transition: background 0.2s;
+}
+
+.login-form input:focus {
+    background: #232946;
+    border: 1px solid #4e54c8;
+}
+
+.login-form button {
     width: 100%;
-    padding: 12px;
+    padding: 13px;
     background: #4e54c8;
-    color: white;
+    color: #fff;
     border: none;
     border-radius: 10px;
     font-size: 16px;
+    font-weight: 700;
     cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .login-form button:hover {
-    background: #3b41b5;
-  }
-  
-  .register-link {
-    margin-top: 15px;
+    margin-bottom: 10px;
+    transition: background 0.3s;
+}
+
+.login-form button:hover {
+    background: #232946;
+    border: 1px solid #4e54c8;
+}
+
+.register-link {
+    margin-top: 8px;
     text-align: center;
     font-size: 14px;
-  }
-  
-  .register-link a {
+    color: #b8c1ec;
+}
+
+.register-link a {
     color: #4e54c8;
     text-decoration: none;
-  }
-  
-  .register-link a:hover {
+    font-weight: 700;
+}
+
+.register-link a:hover {
     text-decoration: underline;
-  }
-  
+}
+
+.login-msg {
+    display: block;
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+    padding: 8px 0;
+    margin-bottom: 18px;
+    font-size: 15px;
+}
+
+.login-msg.error {
+    background: rgba(255, 0, 0, 0.15);
+    color: #ff4d4f;
+}
+
+.login-msg.success {
+    background: rgba(0, 255, 55, 0.15);
+    color: #00e676;
+}
+
+/* icono de contraseña mostrar */
+.password-wrapper {
+    position: relative;
+    max-width: 380px;
+}
+.password-wrapper input {
+    width: 100%;
+    
+}
+.toggle-password {
+    position: absolute;
+    right: -30px;
+    width: 50px;
+    top: 33%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    outline: none;
+    display: flex;
+    align-items: center;
+}
+
+/* fin de contraseña mostrar */

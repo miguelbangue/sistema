@@ -7,6 +7,7 @@
   <title>Bienvenido</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/footer.css?v=2">
+  <link rel="stylesheet" href="../css/login.css?v=2">
   <link rel="stylesheet" href="../css/header.css?v=2">
   <link rel="stylesheet" href="../css/bienvenido.css?v=2">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
@@ -33,11 +34,11 @@
 <?php
 // Asegura que el carrito sea un array válido
    
-if($_SESSION['carrito']){
+
   if (isset($_GET['men'])) {
   echo urldecode($_GET['men']);
 }
-}
+
 ?>
 
 
@@ -45,7 +46,7 @@ if($_SESSION['carrito']){
 <div class="body_oscuro">
   
 <div class="carousel-container">
-  <button class="carousel-btn prev">&#10094;</button>
+  
   <div class="carousel-track">
     
   <!-- Cartas con formulario para búsqueda -->
@@ -132,10 +133,11 @@ if($_SESSION['carrito']){
 
 </div>
 </div>
-  <button class="carousel-btn next">&#10095;</button>
+<h1 style="color: white; text-shadow: #7c81f8 0px 0px 5px;">¡Donde la calidad y la comodidad vienen de la mano!  ;)</h1>
 </div>
 </div>
-</div>
+
+
 
 <!-- div separar 1 -->
  <div class="separar1">
@@ -152,16 +154,30 @@ $busqueda_lower =strtolower($busqueda);
 
 <!-- div crear productos -->
 <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] == 1): ?>
-  <div class="crear_producto">
-    <form action="crear_producto.php" method="post" enctype="multipart/form-data">
+<div class="crear_productos">
+<div class="login-container">
+    <div class="login-header">
+        <h2>Crear Producto</h2>
+    </div>
+  
+    <form class="login-form" action="crear_producto.php" method="post" enctype="multipart/form-data">
       <input type="text" name="nombre" placeholder="Nombre del producto" maxlength="14" required>
       <input type="text" step="0.01" name="precio" placeholder="Precio" maxlength="6" required>
       <input type="file" name="imagen" required>
-      <input type="submit" value="Crear Producto">
+      <button type="submit" >Crear Producto</button>
     </form>
+  
   </div>
-  <?php endif; ?>
+</div>
+<!-- div separar 1 -->
+<div class="separar1">
+  </div>
+ <?php endif; ?>
+<!-- div separar 2 -->
+
+
   <!-- fin div productos -->
+
 
   <!-- buscador de productos -->
   <form method="get" action="bienvenido.php#productos" class="buscador-form">
@@ -231,8 +247,8 @@ $busqueda_lower =strtolower($busqueda);
                 <button class="btn_comprar" type="submit"><i class="bi bi-cart-fill"></i></button>
 
                 <?php if ($_SESSION['rol'] == 1): ?>
-                  <a href="editar_producto.php?id=<?php echo 'fnrjnfjb' . $zapatilla['id'] . 'ttbrsewe'; ?>" class="btn_editar">Editar</a>
-                  <a href="eliminar_producto.php?id=<?php echo 'fnrjnfjb' . $zapatilla['id'] . 'ttbrsewe'; ?>" class="btn_eliminar" onclick="return confirm('¿Estás seguro de que deseas dejar de mostrar este producto?');">Deshabilitar </a>
+                  <a href="editar_producto.php?id=<?php echo 'fnrjnfjb' . $zapatilla['id'] . 'ttbrsewe'; ?>" class="btn_editar"> <i class="bi bi-pencil-square"></i></a>
+                  <a href="eliminar_producto.php?id=<?php echo 'fnrjnfjb' . $zapatilla['id'] . 'ttbrsewe'; ?>" class="btn_eliminar" onclick="return confirm('¿Estás seguro de que deseas dejar de mostrar este producto?');"><i class="bi bi-eye-slash"></i> </a>
                 <?php endif; ?>
               </div>
 
