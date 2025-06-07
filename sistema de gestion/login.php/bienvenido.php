@@ -287,12 +287,19 @@ $busqueda_lower =strtolower($busqueda);
   <i class="bi bi-whatsapp" style="font-size: 28px;"></i>
 </a>
 
+<!-- Modal para mostrar la imagen de la carta -->
+<div id="modal-img-producto" class="modal-img-producto">
+  <span class="modal-close" id="close-modal-img">&times;</span>
+  <img id="modal-img-producto-src" src="" alt="Vista ampliada" />
+</div>
+
 <br><br><br>
 
 <?php include "correo.php"; ?>
 <?php require "../plantillas/footer.php";?>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+<script src="../js/modalverfoto.js"></script>
 <script src="../js/header.js"></script>
 <script src="../js/cartasbuscar.js"></script>
 <script src="../js/carruselcartas.js"></script>
