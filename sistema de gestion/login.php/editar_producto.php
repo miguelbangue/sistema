@@ -37,20 +37,19 @@ if ($sqlEditar && $sqlEditar->num_rows > 0) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Editar</title>
   <link rel="icon" type="image/png" href="../imagenes/Flux_Dev_A_stylish_urban_sneaker_store_front_named_UrbanStep_w_2.jpg">
-  <link rel="stylesheet" href="../css/footer.css?v=2">
-  <link rel="stylesheet" href="../css/header.css?v=2">
   <link rel="stylesheet" href="../css/login.css">
   <link rel="stylesheet" href="../css/bienvenido.css">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body style="background: #181c2f;">
 
-<?php require "../plantillas/header.html"; ?>
 
-<div class="crear_producto">
-  <h1><strong>Formulario para Editar</strong></h1>
-  <br>
-  <form action="edit.php" method="post" enctype="multipart/form-data">
+<div class="crear_productos">
+<div class="login-container">
+    <div class="login-header">
+        <h2>editar Producto</h2>
+    </div>
+  <form action="edit.php" class="login-form" method="post" enctype="multipart/form-data">
     <?php
       if (isset($_SESSION['error'])) {
           echo "<label style='border-radius: 15px; background: rgba(255, 0, 0, 0.5); color: white; padding:5px; display: block; margin-bottom: 10px;'>".$_SESSION['error']."</label>";
@@ -62,14 +61,29 @@ if ($sqlEditar && $sqlEditar->num_rows > 0) {
     <input type="text" name="nombre" value="<?php echo htmlspecialchars($datos['nombre']); ?>" maxlength="14" required>
     <input type="text" step="0.01" name="precio" value="<?php echo htmlspecialchars($datos['precio']); ?>" maxlength="6" required>
     
-    <img src="<?php echo htmlspecialchars($datos['imagen']); ?>" alt="Imagen actual" style="width:25%; margin: auto;">
-    <input type="file" name="imagen" required>
-    
-    <input type="submit" name="presonar" value="Editar Producto">
+    <div class="imagen-actual-wrapper">
+      <img src="<?php echo htmlspecialchars($datos['imagen']); ?>" alt="Imagen actual" class="imagen-actual">
+    </div>
+    <input type="file" name="imagen" id="input-imagen" accept="image/*">
+        
+    <button type="submit" name="presonar" >Editar Producto</button>
   </form>
+</div>
+</div>
 </div>
 
 <?php $conexion->close(); ?>
-<script src="../js/header.js"></script>
+<script>
+document.getElementById('input-imagen').addEventListener('change', function(e) {
+  const file = e.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function(ev) {
+      document.querySelector('.imagen-actual').src = ev.target.result;
+    }
+    reader.readAsDataURL(file);
+  }
+});
+</script>
 </body>
 </html>

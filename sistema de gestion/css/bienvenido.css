@@ -625,3 +625,31 @@ body {
   }
 }
 
+/* editar producto estilo de la imagen*/
+/* Ejemplo para aplicar al div contenedor de la imagen */
+.imagen-actual-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 18px 0 10px 0;
+  max-width: 360px;
+  min-width: 60px;
+  
+}
+
+.imagen-actual {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  box-shadow: 0 4px 24px rgba(31,38,135,0.13);
+  background: #fff;
+  padding: 8px;
+  transition: box-shadow 0.2s;
+  background: linear-gradient(
+  to right,
+  rgba(31,38,135,0.13) 0%,
+  #fff 50%,
+  #fff 50%,
+  rgba(31,38,135,0.13) 100%
+);
+}

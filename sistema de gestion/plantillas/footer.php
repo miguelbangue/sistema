@@ -18,6 +18,8 @@
           <input type="reset" value="Borrar">
         </div>
       </form>
+      <hr>
+      <strong>fundado por @ miguel angel *derechos de autor recervados &copy; 2025 </strong>
     </div>
   </div>
 </footer>
